@@ -8,21 +8,29 @@
 
 /* Begin PBXBuildFile section */
 		1D988191218CC2EE003A1400 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D988190218CC2EE003A1400 /* AppDelegate.swift */; };
-		1D988193218CC2EE003A1400 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D988192218CC2EE003A1400 /* ViewController.swift */; };
 		1D988198218CC2EF003A1400 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1D988197218CC2EF003A1400 /* Assets.xcassets */; };
 		1D98819B218CC2EF003A1400 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1D988199218CC2EF003A1400 /* LaunchScreen.storyboard */; };
 		1D9881A8218CCAFC003A1400 /* SnapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D9881A7218CCAFC003A1400 /* SnapKit.framework */; };
+		1D9881AA218CD4BD003A1400 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D9881A9218CD4BD003A1400 /* ProfileViewController.swift */; };
+		1D9881AD218DA66A003A1400 /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D9881AC218DA66A003A1400 /* UIColorExtension.swift */; };
+		1D9881AF218DA68F003A1400 /* UILabelLetterSpacingExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D9881AE218DA68F003A1400 /* UILabelLetterSpacingExtension.swift */; };
+		1D9881B1218DA6BB003A1400 /* UITextFieldExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D9881B0218DA6BB003A1400 /* UITextFieldExtension.swift */; };
+		1D9881B5218DCDD2003A1400 /* TypeViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D9881B4218DCDD2003A1400 /* TypeViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		1D98818D218CC2EE003A1400 /* WorkoutAppSnapKit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WorkoutAppSnapKit.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1D988190218CC2EE003A1400 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		1D988192218CC2EE003A1400 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		1D988197218CC2EF003A1400 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1D98819A218CC2EF003A1400 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1D98819C218CC2EF003A1400 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1D9881A4218CC5A2003A1400 /* SnapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SnapKit.framework; path = Carthage/Build/Mac/SnapKit.framework; sourceTree = "<group>"; };
 		1D9881A7218CCAFC003A1400 /* SnapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SnapKit.framework; path = Carthage/Build/iOS/SnapKit.framework; sourceTree = "<group>"; };
+		1D9881A9218CD4BD003A1400 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		1D9881AC218DA66A003A1400 /* UIColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
+		1D9881AE218DA68F003A1400 /* UILabelLetterSpacingExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UILabelLetterSpacingExtension.swift; sourceTree = "<group>"; };
+		1D9881B0218DA6BB003A1400 /* UITextFieldExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITextFieldExtension.swift; sourceTree = "<group>"; };
+		1D9881B4218DCDD2003A1400 /* TypeViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypeViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,11 +65,13 @@
 		1D98818F218CC2EE003A1400 /* WorkoutAppSnapKit */ = {
 			isa = PBXGroup;
 			children = (
+				1D9881AB218CE297003A1400 /* Extensions */,
 				1D988190218CC2EE003A1400 /* AppDelegate.swift */,
-				1D988192218CC2EE003A1400 /* ViewController.swift */,
 				1D988197218CC2EF003A1400 /* Assets.xcassets */,
 				1D988199218CC2EF003A1400 /* LaunchScreen.storyboard */,
 				1D98819C218CC2EF003A1400 /* Info.plist */,
+				1D9881A9218CD4BD003A1400 /* ProfileViewController.swift */,
+				1D9881B4218DCDD2003A1400 /* TypeViewCell.swift */,
 			);
 			path = WorkoutAppSnapKit;
 			sourceTree = "<group>";
@@ -73,6 +83,16 @@
 				1D9881A4218CC5A2003A1400 /* SnapKit.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		1D9881AB218CE297003A1400 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				1D9881AC218DA66A003A1400 /* UIColorExtension.swift */,
+				1D9881AE218DA68F003A1400 /* UILabelLetterSpacingExtension.swift */,
+				1D9881B0218DA6BB003A1400 /* UITextFieldExtension.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -186,8 +206,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1D988193218CC2EE003A1400 /* ViewController.swift in Sources */,
+				1D9881B1218DA6BB003A1400 /* UITextFieldExtension.swift in Sources */,
+				1D9881AA218CD4BD003A1400 /* ProfileViewController.swift in Sources */,
+				1D9881B5218DCDD2003A1400 /* TypeViewCell.swift in Sources */,
 				1D988191218CC2EE003A1400 /* AppDelegate.swift in Sources */,
+				1D9881AF218DA68F003A1400 /* UILabelLetterSpacingExtension.swift in Sources */,
+				1D9881AD218DA66A003A1400 /* UIColorExtension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

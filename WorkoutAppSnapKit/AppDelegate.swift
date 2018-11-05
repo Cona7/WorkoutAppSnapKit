@@ -8,9 +8,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(
         _ application: UIApplication,
         didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        window?.rootViewController = ViewController(nibName: nil, bundle: nil)
 
+        let viewController = ProfileViewController(nibName: nil, bundle: nil)
+        let navigationController = UINavigationController(rootViewController: viewController)
+
+        navigationController.navigationBar.barStyle = .black
+
+        window?.rootViewController = navigationController
         window?.makeKeyAndVisible()
+
+        UINavigationBar.appearance().barTintColor = .customBlue
+        UINavigationBar.appearance().backgroundColor = .customBlue
 
         return true
     }
