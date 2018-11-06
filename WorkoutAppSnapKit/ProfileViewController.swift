@@ -49,6 +49,7 @@ class ProfileViewController: UIViewController {
 
         let menuBtn = UIButton(type: .custom)
         menuBtn.setImage(#imageLiteral(resourceName: "iconSettings"), for: .normal)
+        menuBtn.addTarget(self, action: #selector(editButtonTapped), for: UIControl.Event.touchUpInside)
 
         let settingsBarItem = UIBarButtonItem(customView: menuBtn)
         navigationItem.rightBarButtonItem = settingsBarItem
@@ -85,6 +86,14 @@ class ProfileViewController: UIViewController {
             make.left.equalTo(view)
             make.right.equalTo(view)
             make.bottom.equalTo(view)
+        }
+    }
+
+    @objc
+    func editButtonTapped() {
+        let editProfileViewController = EditProfileViewController()
+        if let navigator = navigationController {
+            navigator.pushViewController(editProfileViewController, animated: true)
         }
     }
 }

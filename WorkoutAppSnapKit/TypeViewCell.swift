@@ -15,7 +15,7 @@ class TypeViewCell: UITableViewCell {
         let label = UILabel()
         label.font = UIFont(name: "Helvetica-Neue", size: 17.0)
         return label
-        }()
+    }()
 
     lazy var lineView: UIView = {
         let lineView = UIView()
