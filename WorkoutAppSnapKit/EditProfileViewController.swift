@@ -6,12 +6,9 @@ class EditProfileViewController: UIViewController {
     lazy var profileImageView: UIImageView = {
         let image = #imageLiteral(resourceName: "oval2")
         let imageView = UIImageView(image: image)
-        imageView.translatesAutoresizingMaskIntoConstraints = false
         imageView.contentMode = .scaleAspectFit
         return imageView
     }()
-
-    lazy var leftProfileImageView = profileImageView
 
     override func viewDidLoad() {
         super.viewDidLoad()
