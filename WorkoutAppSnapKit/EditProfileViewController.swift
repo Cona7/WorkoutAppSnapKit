@@ -3,8 +3,6 @@ import UIKit
 
 class EditProfileViewController: UIViewController {
 
-    let helveticaNeueFontString = "HelveticaNeue"
-
     var imageView: UIImageView {
         let image = #imageLiteral(resourceName: "oval2")
         let imageView = UIImageView(image: image)
@@ -14,11 +12,12 @@ class EditProfileViewController: UIViewController {
 
     var textField: UITextField {
         let textField = UITextField()
+        textField.delegate = self
         textField.layer.borderColor = UIColor.customBlue.cgColor
         textField.layer.borderWidth = 1.0
         textField.layer.cornerRadius = 4
         textField.textColor = .customBlue
-        textField.font = UIFont(name: helveticaNeueFontString, size: 13)
+        textField.font = .setHelveticaNeue(textFont: 13)
         textField.setLeftPaddingPoints(14)
         return textField
     }
@@ -51,9 +50,15 @@ class EditProfileViewController: UIViewController {
     lazy var heightSegmentedControl = segmentedControl
     lazy var weightSegmentedControl = segmentedControl
 
+    var imageViewTopConstraintChanged = false
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        setup()
+    }
+
+    func setup() {
         view.backgroundColor = .white
 
         navigationItem.title = "EditProfile"
@@ -70,6 +75,18 @@ class EditProfileViewController: UIViewController {
         weightSegmentedControl.insertSegment(withTitle: "kg", at: 1, animated: false)
         weightSegmentedControl.selectedSegmentIndex = 0
 
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
+
+        let tapGestrure = UITapGestureRecognizer(target: self, action: #selector(EditProfileViewController.dismissKeyboard))
+
+        view.addGestureRecognizer(tapGestrure)
+
+        addSubviews()
+        layout()
+    }
+
+    func addSubviews() {
         view.addSubview(centarProfileImageView)
         view.addSubview(leftProfileImageView)
         view.addSubview(rightProfileImageView)
@@ -82,7 +99,9 @@ class EditProfileViewController: UIViewController {
         view.addSubview(weightSegmentedControl)
 
         view.addSubview(saveButton)
+    }
 
+    func layout() { // swiftlint:disable:this function_body_length
         centarProfileImageView.snp.makeConstraints { (make) -> Void in
             make.top.equalTo(view.safeAreaLayoutGuide).offset(49)
             make.centerX.equalTo(view)
@@ -145,5 +164,63 @@ class EditProfileViewController: UIViewController {
             make.trailing.equalTo(view).offset(-40)
             make.height.equalTo(50)
         }
+    }
+
+    @objc
+    func keyboardWillShow(notification: Notification) {
+
+        if let keyboardSize = (notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue,
+            keyboardSize.origin.y < (weightTextField.frame.origin.y + weightTextField.frame.height + view.frame.origin.y) {
+            let constantToRaiseConstraint = keyboardSize.origin.y - weightTextField.frame.origin.y - weightTextField.frame.height - 20
+            centarProfileImageView.snp.remakeConstraints { (make) -> Void in
+                make.top.equalTo(view.frame.origin.y).offset(constantToRaiseConstraint)
+                make.centerX.equalTo(view)
+                make.height.equalTo(80)
+                make.height.equalTo(centarProfileImageView.snp.width)
+            }
+
+            saveButton.snp.remakeConstraints { (make) -> Void in
+                make.bottom.equalTo(view).offset(constantToRaiseConstraint - 40)
+                make.leading.equalTo(view).offset(40)
+                make.trailing.equalTo(view).offset(-40)
+                make.height.equalTo(50)
+            }
+            imageViewTopConstraintChanged = true
+
+            view.layoutIfNeeded()
+        }
+    }
+
+    @objc
+    func keyboardWillHide(notification: Notification) {
+        if imageViewTopConstraintChanged {
+            centarProfileImageView.snp.remakeConstraints { (make) -> Void in
+                make.top.equalTo(view.safeAreaLayoutGuide).offset(49)
+                make.centerX.equalTo(view)
+                make.height.equalTo(80)
+                make.height.equalTo(centarProfileImageView.snp.width)
+            }
+
+            saveButton.snp.remakeConstraints { (make) -> Void in
+                make.bottom.equalTo(view).offset(-40)
+                make.leading.equalTo(view).offset(40)
+                make.trailing.equalTo(view).offset(-40)
+                make.height.equalTo(50)
+            }
+            view.layoutIfNeeded()
+        }
+    }
+
+    @objc
+    func dismissKeyboard() {
+        view.endEditing(true)
+    }
+}
+
+extension EditProfileViewController: UITextFieldDelegate {
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        view.endEditing(true)
+        return false
     }
 }

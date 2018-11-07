@@ -31,7 +31,7 @@ class ProfileViewController: UIViewController {
         label.text = "Username"
         label.font = .setHelveticaNeue(textFont: 19)
         label.letterSpace = 2.2
-        label.textAlignment = NSTextAlignment.center
+        label.textAlignment = .center
         return label
     }()
 
@@ -60,7 +60,7 @@ class ProfileViewController: UIViewController {
 
         let menuBtn = UIButton(type: .custom)
         menuBtn.setImage(#imageLiteral(resourceName: "iconSettings"), for: .normal)
-        menuBtn.addTarget(self, action: #selector(editButtonTapped), for: UIControl.Event.touchUpInside)
+        menuBtn.addTarget(self, action: #selector(editButtonTapped), for: .touchUpInside)
 
         let settingsBarItem = UIBarButtonItem(customView: menuBtn)
         navigationItem.rightBarButtonItem = settingsBarItem
