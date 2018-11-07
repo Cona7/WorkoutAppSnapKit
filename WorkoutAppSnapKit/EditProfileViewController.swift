@@ -168,23 +168,18 @@ class EditProfileViewController: UIViewController {
 
     @objc
     func keyboardWillShow(notification: Notification) {
-
         if let keyboardSize = (notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue,
             keyboardSize.origin.y < (weightTextField.frame.origin.y + weightTextField.frame.height + view.frame.origin.y) {
             let constantToRaiseConstraint = keyboardSize.origin.y - weightTextField.frame.origin.y - weightTextField.frame.height - 20
-            centarProfileImageView.snp.remakeConstraints { (make) -> Void in
-                make.top.equalTo(view.frame.origin.y).offset(constantToRaiseConstraint)
-                make.centerX.equalTo(view)
-                make.height.equalTo(80)
-                make.height.equalTo(centarProfileImageView.snp.width)
+
+            centarProfileImageView.snp.updateConstraints { (make) in
+                make.top.equalTo(view.safeAreaLayoutGuide).offset(constantToRaiseConstraint)
             }
 
-            saveButton.snp.remakeConstraints { (make) -> Void in
-                make.bottom.equalTo(view).offset(constantToRaiseConstraint - 40)
-                make.leading.equalTo(view).offset(40)
-                make.trailing.equalTo(view).offset(-40)
-                make.height.equalTo(50)
+            saveButton.snp.updateConstraints { (make) in
+                make.bottom.equalTo(view).offset(constantToRaiseConstraint)
             }
+
             imageViewTopConstraintChanged = true
 
             view.layoutIfNeeded()
@@ -194,19 +189,14 @@ class EditProfileViewController: UIViewController {
     @objc
     func keyboardWillHide(notification: Notification) {
         if imageViewTopConstraintChanged {
-            centarProfileImageView.snp.remakeConstraints { (make) -> Void in
+            centarProfileImageView.snp.updateConstraints { (make) -> Void in
                 make.top.equalTo(view.safeAreaLayoutGuide).offset(49)
-                make.centerX.equalTo(view)
-                make.height.equalTo(80)
-                make.height.equalTo(centarProfileImageView.snp.width)
             }
 
-            saveButton.snp.remakeConstraints { (make) -> Void in
+            saveButton.snp.updateConstraints { (make) -> Void in
                 make.bottom.equalTo(view).offset(-40)
-                make.leading.equalTo(view).offset(40)
-                make.trailing.equalTo(view).offset(-40)
-                make.height.equalTo(50)
             }
+
             view.layoutIfNeeded()
         }
     }
@@ -218,7 +208,7 @@ class EditProfileViewController: UIViewController {
 }
 
 extension EditProfileViewController: UITextFieldDelegate {
-    
+
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         view.endEditing(true)
         return false
