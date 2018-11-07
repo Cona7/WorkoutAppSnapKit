@@ -17,6 +17,7 @@
 		1D9881AF218DA68F003A1400 /* UILabelLetterSpacingExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D9881AE218DA68F003A1400 /* UILabelLetterSpacingExtension.swift */; };
 		1D9881B1218DA6BB003A1400 /* UITextFieldExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D9881B0218DA6BB003A1400 /* UITextFieldExtension.swift */; };
 		1D9881B5218DCDD2003A1400 /* TypeViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D9881B4218DCDD2003A1400 /* TypeViewCell.swift */; };
+		1DEC08A6219212F800C37047 /* UIFontExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DEC08A5219212F800C37047 /* UIFontExtension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,6 +34,7 @@
 		1D9881AE218DA68F003A1400 /* UILabelLetterSpacingExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UILabelLetterSpacingExtension.swift; sourceTree = "<group>"; };
 		1D9881B0218DA6BB003A1400 /* UITextFieldExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITextFieldExtension.swift; sourceTree = "<group>"; };
 		1D9881B4218DCDD2003A1400 /* TypeViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypeViewCell.swift; sourceTree = "<group>"; };
+		1DEC08A5219212F800C37047 /* UIFontExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIFontExtension.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,6 +96,7 @@
 				1D9881AC218DA66A003A1400 /* UIColorExtension.swift */,
 				1D9881AE218DA68F003A1400 /* UILabelLetterSpacingExtension.swift */,
 				1D9881B0218DA6BB003A1400 /* UITextFieldExtension.swift */,
+				1DEC08A5219212F800C37047 /* UIFontExtension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -211,6 +214,7 @@
 			files = (
 				1D9881B1218DA6BB003A1400 /* UITextFieldExtension.swift in Sources */,
 				1D9881AA218CD4BD003A1400 /* ProfileViewController.swift in Sources */,
+				1DEC08A6219212F800C37047 /* UIFontExtension.swift in Sources */,
 				1D9881B5218DCDD2003A1400 /* TypeViewCell.swift in Sources */,
 				1D988191218CC2EE003A1400 /* AppDelegate.swift in Sources */,
 				1D9881AF218DA68F003A1400 /* UILabelLetterSpacingExtension.swift in Sources */,

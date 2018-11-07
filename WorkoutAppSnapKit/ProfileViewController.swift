@@ -5,7 +5,7 @@ class ProfileViewController: UIViewController {
 
     struct CellModel {
         let name: String
-        let number: String = "8545"
+        let number = "8545"
     }
 
     let arrayTotal = [
@@ -22,7 +22,6 @@ class ProfileViewController: UIViewController {
     lazy var profileImageView: UIImageView = {
         let image = #imageLiteral(resourceName: "oval2")
         let imageView = UIImageView(image: image)
-        imageView.translatesAutoresizingMaskIntoConstraints = false
         imageView.contentMode = .scaleAspectFit
         return imageView
     }()
@@ -30,19 +29,31 @@ class ProfileViewController: UIViewController {
     lazy var usernameLabel: UILabel = {
         let label = UILabel()
         label.text = "Username"
-        label.font = UIFont(name: helveticaNeueFontString, size: 19)
+        label.font = .setHelveticaNeue(textFont: 19)
         label.letterSpace = 2.2
         label.textAlignment = NSTextAlignment.center
         return label
     }()
 
-    let helveticaNeueFontString = "HelveticaNeue"
-
-    let tableView = UITableView(frame: CGRect.zero, style: .grouped)
+    lazy var tableView: UITableView = {
+        let tableView = UITableView(frame: CGRect.zero, style: .grouped)
+        tableView.delegate = self
+        tableView.dataSource = self
+        tableView.register(TypeViewCell.self, forCellReuseIdentifier: "TypeViewCell")
+        tableView.rowHeight = 48
+        tableView.separatorStyle = .none
+        tableView.sectionHeaderHeight = 0.0
+        tableView.backgroundColor = .white
+        return tableView
+    }()
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        setup()
+    }
+
+    func setup() {
         view.backgroundColor = .white
 
         navigationItem.title = "Profile"
@@ -54,21 +65,17 @@ class ProfileViewController: UIViewController {
         let settingsBarItem = UIBarButtonItem(customView: menuBtn)
         navigationItem.rightBarButtonItem = settingsBarItem
 
-        let attributes = [NSAttributedString.Key.font: UIFont(name: helveticaNeueFontString, size: 17)!]
-        UINavigationBar.appearance().titleTextAttributes = attributes
+        addSubviews()
+        layout()
+    }
 
-        tableView.delegate = self
-        tableView.dataSource = self
-        tableView.register(TypeViewCell.self, forCellReuseIdentifier: "TypeViewCell")
-        tableView.rowHeight = 48
-        tableView.separatorStyle = .none
-        tableView.sectionHeaderHeight = 0.0
-        tableView.backgroundColor = .white
-
+    func addSubviews() {
         view.addSubview(profileImageView)
         view.addSubview(usernameLabel)
         view.addSubview(tableView)
+    }
 
+    func layout() {
         profileImageView.snp.makeConstraints { (make) -> Void in
             make.top.equalTo(view.safeAreaLayoutGuide).offset(40)
             make.centerX.equalTo(view)

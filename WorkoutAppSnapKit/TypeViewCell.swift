@@ -6,14 +6,14 @@ class TypeViewCell: UITableViewCell {
     lazy var numberLabel: UILabel = {
         let label = UILabel()
         label.textColor = .customBlue
-        label.font = UIFont(name: "Helvetica-Neue", size: 17.0)
-        label.textAlignment = NSTextAlignment.right
+        label.font = .setHelveticaNeue(textFont: 17)
+        label.textAlignment = .right
         return label
     }()
 
     lazy var stringLabel: UILabel = {
         let label = UILabel()
-        label.font = UIFont(name: "Helvetica-Neue", size: 17.0)
+        label.font = .setHelveticaNeue(textFont: 17)
         return label
     }()
 

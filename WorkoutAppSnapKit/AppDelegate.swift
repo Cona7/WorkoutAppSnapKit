@@ -12,15 +12,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let viewController = ProfileViewController(nibName: nil, bundle: nil)
         let navigationController = UINavigationController(rootViewController: viewController)
 
-        navigationController.navigationBar.barStyle = .black
-
         window?.rootViewController = navigationController
         window?.makeKeyAndVisible()
 
-        UINavigationBar.appearance().tintColor = .white
         UINavigationBar.appearance().barTintColor = .customBlue
+        UINavigationBar.appearance().tintColor = .white
         UINavigationBar.appearance().isTranslucent = false
-        UINavigationBar.appearance().titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
+        UINavigationBar.appearance().titleTextAttributes = [.font: UIFont.setHelveticaNeue(textFont: 17), .foregroundColor: UIColor.white]
 
         return true
     }
