@@ -12,7 +12,7 @@ platform :ios do
     lane :production do
         increment_build_number
 
-        match(type: "appstore", app_identifier: "Glasovac.WorkoutAppSnapKit")
+        match(type: "appstore", app_identifier: "com.Glasovac.WorkoutAppSnapKit")
         gym(scheme: "WorkoutAppSnapKit")
 
         pilot
@@ -21,7 +21,7 @@ platform :ios do
     lane :test do
         increment_build_number
 
-        match(type: "adhoc", app_identifier: "Glasovac.WorkoutAppSnapKit")
+        match(type: "adhoc", app_identifier: "com.Glasovac.WorkoutAppSnapKit")
         gym(scheme: "WorkoutAppSnapKit", configuration: "Debug")
 
         crashlytics(
