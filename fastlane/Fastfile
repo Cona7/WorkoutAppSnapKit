@@ -16,11 +16,6 @@ platform :ios do
         gym(scheme: "WorkoutAppSnapKit")
 
         pilot
-
-	slack(
-		message: "New app version available on Testflight",
-		slack_url: "https://hooks.slack.com/services/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"
-	)
     end
 
     lane :test do
@@ -37,11 +32,6 @@ platform :ios do
 
     	version     = get_version_number(xcodeproj: "InitiativeTracker.xcodeproj")
     	build       = get_build_number(xcodeproj: "InitiativeTracker.xcodeproj")
-
-    	slack(
-      		message: "<!here|here>: New iOS *#{version}* (#{build}) :rocket:",
-		slack_url: "https://hooks.slack.com/services/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"
-	)
     end
 
   lane :devices do
