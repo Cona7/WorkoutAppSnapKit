@@ -1,4 +1,6 @@
 import UIKit
+import Crashlytics
+import Fabric
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -8,6 +10,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(
         _ application: UIApplication,
         didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+        Fabric.with([Crashlytics.self])
 
         let viewController = ProfileViewController(nibName: nil, bundle: nil)
         let navigationController = UINavigationController(rootViewController: viewController)

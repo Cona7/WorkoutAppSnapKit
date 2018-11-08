@@ -18,6 +18,7 @@
 		1D9881B1218DA6BB003A1400 /* UITextFieldExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D9881B0218DA6BB003A1400 /* UITextFieldExtension.swift */; };
 		1D9881B5218DCDD2003A1400 /* TypeViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D9881B4218DCDD2003A1400 /* TypeViewCell.swift */; };
 		1DEC08A6219212F800C37047 /* UIFontExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DEC08A5219212F800C37047 /* UIFontExtension.swift */; };
+		65B061016AB6E104045339F5 /* Pods_WorkoutAppSnapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7DB697E3B6F41BCE9D497269 /* Pods_WorkoutAppSnapKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,6 +36,9 @@
 		1D9881B0218DA6BB003A1400 /* UITextFieldExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITextFieldExtension.swift; sourceTree = "<group>"; };
 		1D9881B4218DCDD2003A1400 /* TypeViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypeViewCell.swift; sourceTree = "<group>"; };
 		1DEC08A5219212F800C37047 /* UIFontExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIFontExtension.swift; sourceTree = "<group>"; };
+		65B901CCBBC89E8C1495BBDA /* Pods-WorkoutAppSnapKit.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WorkoutAppSnapKit.debug.xcconfig"; path = "Pods/Target Support Files/Pods-WorkoutAppSnapKit/Pods-WorkoutAppSnapKit.debug.xcconfig"; sourceTree = "<group>"; };
+		7C7E77F840CAEDD7B1E706B3 /* Pods-WorkoutAppSnapKit.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WorkoutAppSnapKit.release.xcconfig"; path = "Pods/Target Support Files/Pods-WorkoutAppSnapKit/Pods-WorkoutAppSnapKit.release.xcconfig"; sourceTree = "<group>"; };
+		7DB697E3B6F41BCE9D497269 /* Pods_WorkoutAppSnapKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WorkoutAppSnapKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -43,6 +47,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1D9881A8218CCAFC003A1400 /* SnapKit.framework in Frameworks */,
+				65B061016AB6E104045339F5 /* Pods_WorkoutAppSnapKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -55,6 +60,7 @@
 				1D98818F218CC2EE003A1400 /* WorkoutAppSnapKit */,
 				1D98818E218CC2EE003A1400 /* Products */,
 				1D9881A3218CC5A2003A1400 /* Frameworks */,
+				C47D88CB0268D87FDF79FF16 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -86,6 +92,7 @@
 			children = (
 				1D9881A7218CCAFC003A1400 /* SnapKit.framework */,
 				1D9881A4218CC5A2003A1400 /* SnapKit.framework */,
+				7DB697E3B6F41BCE9D497269 /* Pods_WorkoutAppSnapKit.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -101,6 +108,15 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
+		C47D88CB0268D87FDF79FF16 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				65B901CCBBC89E8C1495BBDA /* Pods-WorkoutAppSnapKit.debug.xcconfig */,
+				7C7E77F840CAEDD7B1E706B3 /* Pods-WorkoutAppSnapKit.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -108,11 +124,13 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 1D98819F218CC2EF003A1400 /* Build configuration list for PBXNativeTarget "WorkoutAppSnapKit" */;
 			buildPhases = (
+				806D92BF41FCCFC7865FCCBD /* [CP] Check Pods Manifest.lock */,
 				1D988189218CC2EE003A1400 /* Sources */,
 				1D98818A218CC2EE003A1400 /* Frameworks */,
 				1D98818B218CC2EE003A1400 /* Resources */,
 				1D9881A2218CC37C003A1400 /* ShellScript */,
 				1D9881A6218CC5B7003A1400 /* ShellScript */,
+				F6FA430D219480CF00381720 /* Crashlytics */,
 			);
 			buildRules = (
 			);
@@ -204,6 +222,46 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "/usr/local/bin/carthage copy-frameworks\n";
+		};
+		806D92BF41FCCFC7865FCCBD /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-WorkoutAppSnapKit-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F6FA430D219480CF00381720 /* Crashlytics */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = Crashlytics;
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Fabric/run\" 002d1e80e7bf3a300de583f69a92347342fc38a9 e3df1c13235f9dab0dc7accc866329608184f2134ce261febd9bf33b9940b592\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -355,9 +413,11 @@
 		};
 		1D9881A0218CC2EF003A1400 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 65B901CCBBC89E8C1495BBDA /* Pods-WorkoutAppSnapKit.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/Mac",
@@ -377,9 +437,11 @@
 		};
 		1D9881A1218CC2EF003A1400 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7C7E77F840CAEDD7B1E706B3 /* Pods-WorkoutAppSnapKit.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/Mac",
