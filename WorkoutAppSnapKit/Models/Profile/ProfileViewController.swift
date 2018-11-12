@@ -2,22 +2,7 @@ import UIKit
 import SnapKit
 
 class ProfileViewController: UIViewController {
-
-    struct CellModel {
-        let name: String
-        let number = "8545"
-    }
-
-    let arrayTotal = [
-        CellModel(name: "Total workouts"),
-        CellModel(name: "Total reps")
-    ]
-
-    let arrayMuscles = [
-        CellModel(name: "Triceps"),
-        CellModel(name: "Biceps"),
-        CellModel(name: "Bench")
-    ]
+    var presenter: ProfilePresenterInterface!
 
     lazy var profileImageView: UIImageView = {
         let image = #imageLiteral(resourceName: "oval2")
@@ -60,7 +45,7 @@ class ProfileViewController: UIViewController {
 
         let menuBtn = UIButton(type: .custom)
         menuBtn.setImage(#imageLiteral(resourceName: "iconSettings"), for: .normal)
-        menuBtn.addTarget(self, action: #selector(editButtonTapped), for: .touchUpInside)
+        menuBtn.addTarget(self, action: #selector(didTapSettingsButton), for: .touchUpInside)
 
         let settingsBarItem = UIBarButtonItem(customView: menuBtn)
         navigationItem.rightBarButtonItem = settingsBarItem
@@ -95,14 +80,6 @@ class ProfileViewController: UIViewController {
             make.bottom.equalTo(view)
         }
     }
-
-    @objc
-    func editButtonTapped() {
-        let editProfileViewController = EditProfileViewController()
-        if let navigator = navigationController {
-            navigator.pushViewController(editProfileViewController, animated: true)
-        }
-    }
 }
 
 extension ProfileViewController: UITableViewDelegate, UITableViewDataSource {
@@ -122,9 +99,9 @@ extension ProfileViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         switch section {
         case 0:
-            return arrayTotal.count
+            return ProfileInteractor.arrayTotal.count
         case 1:
-            return arrayMuscles.count
+            return ProfileInteractor.arrayMuscles.count
         default:
             fatalError("The section number is not valid")
         }
@@ -137,13 +114,13 @@ extension ProfileViewController: UITableViewDelegate, UITableViewDataSource {
             fatalError("The dequeued cell is not an instance of TypeViewCell.")
         }
 
-        let workoutCell: CellModel
+        let workoutCell: ProfileModel
 
         switch indexPath.section {
         case 0:
-            workoutCell = arrayTotal[indexPath.row]
+            workoutCell = ProfileInteractor.arrayTotal[indexPath.row]
         case 1:
-            workoutCell = arrayMuscles[indexPath.row]
+            workoutCell = ProfileInteractor.arrayMuscles[indexPath.row]
         default:
             fatalError("The section number is not valid")
         }
@@ -154,5 +131,13 @@ extension ProfileViewController: UITableViewDelegate, UITableViewDataSource {
         cell.numberLabel.letterSpace = 0.4
 
         return cell
+    }
+}
+
+extension ProfileViewController {
+
+    @objc
+    func didTapSettingsButton() {
+        presenter.didTapSettingsButton()
     }
 }

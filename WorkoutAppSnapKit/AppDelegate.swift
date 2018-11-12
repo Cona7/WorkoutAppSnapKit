@@ -12,7 +12,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         Fabric.with([Crashlytics.self])
 
-        let viewController = ProfileViewController(nibName: nil, bundle: nil)
+        let viewController = ProfileWireframe.setupModule()
         let navigationController = UINavigationController(rootViewController: viewController)
 
         window?.rootViewController = navigationController
