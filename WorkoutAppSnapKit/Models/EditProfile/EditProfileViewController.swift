@@ -2,6 +2,7 @@ import SnapKit
 import UIKit
 
 class EditProfileViewController: UIViewController {
+    var presenter: EditProfilePresenterInterface!
 
     var imageView: UIImageView {
         let image = #imageLiteral(resourceName: "oval2")
@@ -212,5 +213,10 @@ extension EditProfileViewController: UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         view.endEditing(true)
         return false
+    }
+}
+
+extension EditProfileViewController {
+    func present(viewModel: EditProfileViewModel) {
     }
 }

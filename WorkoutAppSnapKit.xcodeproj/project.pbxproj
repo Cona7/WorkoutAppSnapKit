@@ -14,7 +14,12 @@
 		1D7863BC2199B62D009EB8B9 /* ProfileWireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D7863B62199B62D009EB8B9 /* ProfileWireframe.swift */; };
 		1D7863C02199B977009EB8B9 /* Wireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D7863BF2199B977009EB8B9 /* Wireframe.swift */; };
 		1D7863C52199D243009EB8B9 /* ProfileModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D7863C42199D243009EB8B9 /* ProfileModel.swift */; };
-		1D8F0E872190F87D00FFEBD8 /* EditProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D8F0E862190F87D00FFEBD8 /* EditProfileViewController.swift */; };
+		1D7863CD219A2E78009EB8B9 /* EditProfileInterfaces.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D7863C7219A2E78009EB8B9 /* EditProfileInterfaces.swift */; };
+		1D7863CE219A2E78009EB8B9 /* EditProfilePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D7863C8219A2E78009EB8B9 /* EditProfilePresenter.swift */; };
+		1D7863CF219A2E78009EB8B9 /* EditProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D7863C9219A2E78009EB8B9 /* EditProfileViewController.swift */; };
+		1D7863D0219A2E78009EB8B9 /* EditProfileInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D7863CA219A2E78009EB8B9 /* EditProfileInteractor.swift */; };
+		1D7863D1219A2E78009EB8B9 /* EditProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D7863CB219A2E78009EB8B9 /* EditProfileViewModel.swift */; };
+		1D7863D2219A2E78009EB8B9 /* EditProfileWireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D7863CC219A2E78009EB8B9 /* EditProfileWireframe.swift */; };
 		1D988191218CC2EE003A1400 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D988190218CC2EE003A1400 /* AppDelegate.swift */; };
 		1D988198218CC2EF003A1400 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1D988197218CC2EF003A1400 /* Assets.xcassets */; };
 		1D98819B218CC2EF003A1400 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1D988199218CC2EF003A1400 /* LaunchScreen.storyboard */; };
@@ -35,7 +40,12 @@
 		1D7863B62199B62D009EB8B9 /* ProfileWireframe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileWireframe.swift; sourceTree = "<group>"; };
 		1D7863BF2199B977009EB8B9 /* Wireframe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Wireframe.swift; sourceTree = "<group>"; };
 		1D7863C42199D243009EB8B9 /* ProfileModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileModel.swift; sourceTree = "<group>"; };
-		1D8F0E862190F87D00FFEBD8 /* EditProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileViewController.swift; sourceTree = "<group>"; };
+		1D7863C7219A2E78009EB8B9 /* EditProfileInterfaces.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileInterfaces.swift; sourceTree = "<group>"; };
+		1D7863C8219A2E78009EB8B9 /* EditProfilePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfilePresenter.swift; sourceTree = "<group>"; };
+		1D7863C9219A2E78009EB8B9 /* EditProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileViewController.swift; sourceTree = "<group>"; };
+		1D7863CA219A2E78009EB8B9 /* EditProfileInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileInteractor.swift; sourceTree = "<group>"; };
+		1D7863CB219A2E78009EB8B9 /* EditProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileViewModel.swift; sourceTree = "<group>"; };
+		1D7863CC219A2E78009EB8B9 /* EditProfileWireframe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileWireframe.swift; sourceTree = "<group>"; };
 		1D98818D218CC2EE003A1400 /* WorkoutAppSnapKit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WorkoutAppSnapKit.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1D988190218CC2EE003A1400 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1D988197218CC2EF003A1400 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -69,6 +79,7 @@
 		1D7863AF2199B606009EB8B9 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				1D7863C6219A2E5E009EB8B9 /* EditProfile */,
 				1D7863B02199B61B009EB8B9 /* Profile */,
 			);
 			path = Models;
@@ -103,6 +114,19 @@
 			path = Viper;
 			sourceTree = "<group>";
 		};
+		1D7863C6219A2E5E009EB8B9 /* EditProfile */ = {
+			isa = PBXGroup;
+			children = (
+				1D7863C7219A2E78009EB8B9 /* EditProfileInterfaces.swift */,
+				1D7863C8219A2E78009EB8B9 /* EditProfilePresenter.swift */,
+				1D7863C9219A2E78009EB8B9 /* EditProfileViewController.swift */,
+				1D7863CA219A2E78009EB8B9 /* EditProfileInteractor.swift */,
+				1D7863CB219A2E78009EB8B9 /* EditProfileViewModel.swift */,
+				1D7863CC219A2E78009EB8B9 /* EditProfileWireframe.swift */,
+			);
+			path = EditProfile;
+			sourceTree = "<group>";
+		};
 		1D988184218CC2EE003A1400 = {
 			isa = PBXGroup;
 			children = (
@@ -132,7 +156,6 @@
 				1D988199218CC2EF003A1400 /* LaunchScreen.storyboard */,
 				1D98819C218CC2EF003A1400 /* Info.plist */,
 				1D9881B4218DCDD2003A1400 /* TypeViewCell.swift */,
-				1D8F0E862190F87D00FFEBD8 /* EditProfileViewController.swift */,
 			);
 			path = WorkoutAppSnapKit;
 			sourceTree = "<group>";
@@ -321,18 +344,23 @@
 			buildActionMask = 2147483647;
 			files = (
 				1D9881B1218DA6BB003A1400 /* UITextFieldExtension.swift in Sources */,
+				1D7863D1219A2E78009EB8B9 /* EditProfileViewModel.swift in Sources */,
+				1D7863D2219A2E78009EB8B9 /* EditProfileWireframe.swift in Sources */,
+				1D7863CD219A2E78009EB8B9 /* EditProfileInterfaces.swift in Sources */,
 				1D7863B72199B62D009EB8B9 /* ProfileInterfaces.swift in Sources */,
 				1DEC08A6219212F800C37047 /* UIFontExtension.swift in Sources */,
+				1D7863D0219A2E78009EB8B9 /* EditProfileInteractor.swift in Sources */,
+				1D7863CE219A2E78009EB8B9 /* EditProfilePresenter.swift in Sources */,
 				1D9881B5218DCDD2003A1400 /* TypeViewCell.swift in Sources */,
 				1D7863C02199B977009EB8B9 /* Wireframe.swift in Sources */,
 				1D988191218CC2EE003A1400 /* AppDelegate.swift in Sources */,
 				1D7863B92199B62D009EB8B9 /* ProfileViewController.swift in Sources */,
 				1D9881AF218DA68F003A1400 /* UILabelLetterSpacingExtension.swift in Sources */,
+				1D7863CF219A2E78009EB8B9 /* EditProfileViewController.swift in Sources */,
 				1D7863BC2199B62D009EB8B9 /* ProfileWireframe.swift in Sources */,
 				1D9881AD218DA66A003A1400 /* UIColorExtension.swift in Sources */,
 				1D7863B82199B62D009EB8B9 /* ProfilePresenter.swift in Sources */,
 				1D7863BA2199B62D009EB8B9 /* ProfileInteractor.swift in Sources */,
-				1D8F0E872190F87D00FFEBD8 /* EditProfileViewController.swift in Sources */,
 				1D7863C52199D243009EB8B9 /* ProfileModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
