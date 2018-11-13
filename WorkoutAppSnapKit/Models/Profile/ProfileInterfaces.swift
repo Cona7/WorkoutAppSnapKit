@@ -1,4 +1,5 @@
 import UIKit
+import RxCocoa
 
 enum ProfileNavigationOption {
     case editProfile
@@ -9,6 +10,8 @@ protocol ProfileWireframeInterface {
 }
 
 protocol ProfilePresenterInterface {
+    var viewModelDriver: Driver<ProfileViewModel> { get }
+
     func didTapSettingsButton()
 }
 

@@ -1,3 +1,5 @@
 github "SnapKit/SnapKit" ~> 4.0.0
 github "Rep2/SwiftViewModels" ~> 0.5
 github "ReactiveX/RxSwift" ~> 4.2
+
+github "Rep2/SwiftViewModels" ~> 0.5

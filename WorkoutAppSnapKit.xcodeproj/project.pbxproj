@@ -28,11 +28,16 @@
 		1D9881AF218DA68F003A1400 /* UILabelLetterSpacingExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D9881AE218DA68F003A1400 /* UILabelLetterSpacingExtension.swift */; };
 		1D9881B1218DA6BB003A1400 /* UITextFieldExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D9881B0218DA6BB003A1400 /* UITextFieldExtension.swift */; };
 		1D9881B5218DCDD2003A1400 /* TypeViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D9881B4218DCDD2003A1400 /* TypeViewCell.swift */; };
+		1DE0579D219B102700D8F89D /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D77595B219B0EA300E32B33 /* RxSwift.framework */; };
+		1DE0579E219B102B00D8F89D /* RxCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D775959219B0E9B00E32B33 /* RxCocoa.framework */; };
+		1DE057A0219B13D000D8F89D /* ProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DE0579F219B13D000D8F89D /* ProfileViewModel.swift */; };
+		1DE057A2219B262500D8F89D /* SwiftViewModels.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DE057A1219B262400D8F89D /* SwiftViewModels.framework */; };
 		1DEC08A6219212F800C37047 /* UIFontExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DEC08A5219212F800C37047 /* UIFontExtension.swift */; };
-		65B061016AB6E104045339F5 /* Pods_WorkoutAppSnapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7DB697E3B6F41BCE9D497269 /* Pods_WorkoutAppSnapKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1D775959219B0E9B00E32B33 /* RxCocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxCocoa.framework; path = Carthage/Build/iOS/RxCocoa.framework; sourceTree = "<group>"; };
+		1D77595B219B0EA300E32B33 /* RxSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxSwift.framework; path = Carthage/Build/iOS/RxSwift.framework; sourceTree = "<group>"; };
 		1D7863B12199B62D009EB8B9 /* ProfileInterfaces.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileInterfaces.swift; sourceTree = "<group>"; };
 		1D7863B22199B62D009EB8B9 /* ProfilePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfilePresenter.swift; sourceTree = "<group>"; };
 		1D7863B32199B62D009EB8B9 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
@@ -57,10 +62,9 @@
 		1D9881AE218DA68F003A1400 /* UILabelLetterSpacingExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UILabelLetterSpacingExtension.swift; sourceTree = "<group>"; };
 		1D9881B0218DA6BB003A1400 /* UITextFieldExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITextFieldExtension.swift; sourceTree = "<group>"; };
 		1D9881B4218DCDD2003A1400 /* TypeViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypeViewCell.swift; sourceTree = "<group>"; };
+		1DE0579F219B13D000D8F89D /* ProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewModel.swift; sourceTree = "<group>"; };
+		1DE057A1219B262400D8F89D /* SwiftViewModels.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftViewModels.framework; path = Carthage/Build/iOS/SwiftViewModels.framework; sourceTree = "<group>"; };
 		1DEC08A5219212F800C37047 /* UIFontExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIFontExtension.swift; sourceTree = "<group>"; };
-		65B901CCBBC89E8C1495BBDA /* Pods-WorkoutAppSnapKit.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WorkoutAppSnapKit.debug.xcconfig"; path = "Pods/Target Support Files/Pods-WorkoutAppSnapKit/Pods-WorkoutAppSnapKit.debug.xcconfig"; sourceTree = "<group>"; };
-		7C7E77F840CAEDD7B1E706B3 /* Pods-WorkoutAppSnapKit.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WorkoutAppSnapKit.release.xcconfig"; path = "Pods/Target Support Files/Pods-WorkoutAppSnapKit/Pods-WorkoutAppSnapKit.release.xcconfig"; sourceTree = "<group>"; };
-		7DB697E3B6F41BCE9D497269 /* Pods_WorkoutAppSnapKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WorkoutAppSnapKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,7 +73,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				1D9881A8218CCAFC003A1400 /* SnapKit.framework in Frameworks */,
-				65B061016AB6E104045339F5 /* Pods_WorkoutAppSnapKit.framework in Frameworks */,
+				1DE0579D219B102700D8F89D /* RxSwift.framework in Frameworks */,
+				1DE0579E219B102B00D8F89D /* RxCocoa.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -94,6 +99,7 @@
 				1D7863B42199B62D009EB8B9 /* ProfileInteractor.swift */,
 				1D7863B62199B62D009EB8B9 /* ProfileWireframe.swift */,
 				1D7863C42199D243009EB8B9 /* ProfileModel.swift */,
+				1DE0579F219B13D000D8F89D /* ProfileViewModel.swift */,
 			);
 			path = Profile;
 			sourceTree = "<group>";
@@ -133,7 +139,6 @@
 				1D98818F218CC2EE003A1400 /* WorkoutAppSnapKit */,
 				1D98818E218CC2EE003A1400 /* Products */,
 				1D9881A3218CC5A2003A1400 /* Frameworks */,
-				C47D88CB0268D87FDF79FF16 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -163,9 +168,11 @@
 		1D9881A3218CC5A2003A1400 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				1DE057A1219B262400D8F89D /* SwiftViewModels.framework */,
+				1D77595B219B0EA300E32B33 /* RxSwift.framework */,
+				1D775959219B0E9B00E32B33 /* RxCocoa.framework */,
 				1D9881A7218CCAFC003A1400 /* SnapKit.framework */,
 				1D9881A4218CC5A2003A1400 /* SnapKit.framework */,
-				7DB697E3B6F41BCE9D497269 /* Pods_WorkoutAppSnapKit.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -181,15 +188,6 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
-		C47D88CB0268D87FDF79FF16 /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				65B901CCBBC89E8C1495BBDA /* Pods-WorkoutAppSnapKit.debug.xcconfig */,
-				7C7E77F840CAEDD7B1E706B3 /* Pods-WorkoutAppSnapKit.release.xcconfig */,
-			);
-			name = Pods;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -197,13 +195,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 1D98819F218CC2EF003A1400 /* Build configuration list for PBXNativeTarget "WorkoutAppSnapKit" */;
 			buildPhases = (
-				806D92BF41FCCFC7865FCCBD /* [CP] Check Pods Manifest.lock */,
 				1D988189218CC2EE003A1400 /* Sources */,
 				1D98818A218CC2EE003A1400 /* Frameworks */,
 				1D98818B218CC2EE003A1400 /* Resources */,
-				1D9881A2218CC37C003A1400 /* ShellScript */,
-				1D9881A6218CC5B7003A1400 /* ShellScript */,
-				F6FA430D219480CF00381720 /* Crashlytics */,
+				1D9881A2218CC37C003A1400 /* SwiftLint */,
+				1D9881A6218CC5B7003A1400 /* Carthage */,
 			);
 			buildRules = (
 			);
@@ -260,7 +256,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		1D9881A2218CC37C003A1400 /* ShellScript */ = {
+		1D9881A2218CC37C003A1400 /* SwiftLint */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -269,6 +265,7 @@
 			);
 			inputPaths = (
 			);
+			name = SwiftLint;
 			outputFileListPaths = (
 			);
 			outputPaths = (
@@ -277,7 +274,7 @@
 			shellPath = /bin/sh;
 			shellScript = "if which swiftlint >/dev/null; then\nswiftlint\nelse\necho \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
 		};
-		1D9881A6218CC5B7003A1400 /* ShellScript */ = {
+		1D9881A6218CC5B7003A1400 /* Carthage */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -286,55 +283,22 @@
 			);
 			inputPaths = (
 				"$(SRCROOT)/Carthage/Build/iOS/SnapKit.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/RxSwift.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/RxCocoa.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/SwiftViewModels.framework",
 			);
+			name = Carthage;
 			outputFileListPaths = (
 			);
 			outputPaths = (
 				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/SnapKit.framework",
+				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/RxSwift.framework",
+				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/RxCocoa.framework",
+				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/SwiftViewModels.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "/usr/local/bin/carthage copy-frameworks\n";
-		};
-		806D92BF41FCCFC7865FCCBD /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-WorkoutAppSnapKit-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		F6FA430D219480CF00381720 /* Crashlytics */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-			);
-			name = Crashlytics;
-			outputFileListPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Fabric/run\" 002d1e80e7bf3a300de583f69a92347342fc38a9 e3df1c13235f9dab0dc7accc866329608184f2134ce261febd9bf33b9940b592\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -357,6 +321,7 @@
 				1D7863B92199B62D009EB8B9 /* ProfileViewController.swift in Sources */,
 				1D9881AF218DA68F003A1400 /* UILabelLetterSpacingExtension.swift in Sources */,
 				1D7863CF219A2E78009EB8B9 /* EditProfileViewController.swift in Sources */,
+				1DE057A0219B13D000D8F89D /* ProfileViewModel.swift in Sources */,
 				1D7863BC2199B62D009EB8B9 /* ProfileWireframe.swift in Sources */,
 				1D9881AD218DA66A003A1400 /* UIColorExtension.swift in Sources */,
 				1D7863B82199B62D009EB8B9 /* ProfilePresenter.swift in Sources */,
@@ -497,16 +462,11 @@
 		};
 		1D9881A0218CC2EF003A1400 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 65B901CCBBC89E8C1495BBDA /* Pods-WorkoutAppSnapKit.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 4;
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				DEVELOPMENT_TEAM = MDX989Y6D8;
+				CODE_SIGN_STYLE = Automatic;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(PROJECT_DIR)/Carthage/Build/Mac",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
 				);
 				INFOPLIST_FILE = WorkoutAppSnapKit/Info.plist;
@@ -514,9 +474,8 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.Glasovac.WorkoutAppSnapKit;
+				PRODUCT_BUNDLE_IDENTIFIER = Glasovac.WorkoutAppSnapKit;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = "match Development com.Glasovac.WorkoutAppSnapKit";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -524,17 +483,11 @@
 		};
 		1D9881A1218CC2EF003A1400 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 7C7E77F840CAEDD7B1E706B3 /* Pods-WorkoutAppSnapKit.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Distribution";
-				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 4;
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				DEVELOPMENT_TEAM = MDX989Y6D8;
+				CODE_SIGN_STYLE = Automatic;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(PROJECT_DIR)/Carthage/Build/Mac",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
 				);
 				INFOPLIST_FILE = WorkoutAppSnapKit/Info.plist;
@@ -542,9 +495,8 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.Glasovac.WorkoutAppSnapKit;
+				PRODUCT_BUNDLE_IDENTIFIER = Glasovac.WorkoutAppSnapKit;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = "match AdHoc com.Glasovac.WorkoutAppSnapKit";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

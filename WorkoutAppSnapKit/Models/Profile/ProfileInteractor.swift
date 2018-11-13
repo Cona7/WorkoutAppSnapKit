@@ -3,14 +3,14 @@ import Foundation
 final class ProfileInteractor {
 
     static let arrayTotal = [
-        ProfileModel(name: "Total workouts"),
-        ProfileModel(name: "Total reps")
+        ProfileCellModel(name: "Total workouts"),
+        ProfileCellModel(name: "Total reps")
     ]
 
     static let arrayMuscles = [
-        ProfileModel(name: "Triceps"),
-        ProfileModel(name: "Biceps"),
-        ProfileModel(name: "Bench")
+        ProfileCellModel(name: "Triceps"),
+        ProfileCellModel(name: "Biceps"),
+        ProfileCellModel(name: "Bench")
     ]
 }
 

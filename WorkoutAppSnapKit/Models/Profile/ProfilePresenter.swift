@@ -1,6 +1,10 @@
 import UIKit
+import RxCocoa
+import RxSwift
 
 final class ProfilePresenter {
+    private let modelVariable = Variable(ProfileModel())
+
     private let interactor: ProfileInteractorInterface
     private let wireframe: ProfileWireframeInterface
 
@@ -12,6 +16,12 @@ final class ProfilePresenter {
 }
 
 extension ProfilePresenter: ProfilePresenterInterface {
+    var viewModelDriver: Driver<ProfileViewModel> {
+        return modelVariable
+            .asDriver()
+            .map { $0.viewModel }
+    }
+
     func didTapSettingsButton() {
         wireframe.navigate(to: .editProfile)
     }

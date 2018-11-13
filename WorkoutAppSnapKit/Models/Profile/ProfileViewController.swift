@@ -1,21 +1,21 @@
 import UIKit
 import SnapKit
+import RxSwift
 
 class ProfileViewController: UIViewController {
     var presenter: ProfilePresenterInterface!
 
+    let disposeBag = DisposeBag()
+
     lazy var profileImageView: UIImageView = {
-        let image = #imageLiteral(resourceName: "oval2")
-        let imageView = UIImageView(image: image)
+        let imageView = UIImageView()
         imageView.contentMode = .scaleAspectFit
         return imageView
     }()
 
     lazy var usernameLabel: UILabel = {
         let label = UILabel()
-        label.text = "Username"
         label.font = .setHelveticaNeue(textFont: 19)
-        label.letterSpace = 2.2
         label.textAlignment = .center
         return label
     }()
@@ -50,8 +50,22 @@ class ProfileViewController: UIViewController {
         let settingsBarItem = UIBarButtonItem(customView: menuBtn)
         navigationItem.rightBarButtonItem = settingsBarItem
 
+        presenter
+            .viewModelDriver
+            .drive(
+                onNext: { [weak self] viewModel in
+                    self?.present(viewModel: viewModel)
+                }
+            ).disposed(by: disposeBag)
+
         addSubviews()
         layout()
+    }
+
+    func present(viewModel: ProfileViewModel) {
+        usernameLabel.text = viewModel.username
+        usernameLabel.letterSpace = 2.2
+        profileImageView = UIImageView(image: viewModel.userImage)
     }
 
     func addSubviews() {
@@ -114,7 +128,7 @@ extension ProfileViewController: UITableViewDelegate, UITableViewDataSource {
             fatalError("The dequeued cell is not an instance of TypeViewCell.")
         }
 
-        let workoutCell: ProfileModel
+        let workoutCell: ProfileCellModel
 
         switch indexPath.section {
         case 0:
