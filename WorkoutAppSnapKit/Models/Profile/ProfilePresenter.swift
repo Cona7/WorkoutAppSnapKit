@@ -3,7 +3,7 @@ import RxCocoa
 import RxSwift
 
 final class ProfilePresenter {
-    let dispose = DisposeBag()
+    let disposeBag = DisposeBag()
 
     private let modelVariable = Variable(ProfileModel())
 
@@ -35,7 +35,7 @@ extension ProfilePresenter: ProfilePresenterInterface {
                     self.modelVariable.value.arrayTotal = value
                 }
             )
-            .disposed(by: dispose)
+            .disposed(by: disposeBag)
     }
 
     func fetchArrayMuscles() {
@@ -46,7 +46,7 @@ extension ProfilePresenter: ProfilePresenterInterface {
                     self.modelVariable.value.arrayMuscles = value
                 }
             )
-            .disposed(by: dispose)
+            .disposed(by: disposeBag)
     }
     func didTapSettingsButton() {
         wireframe.navigate(to: .editProfile)

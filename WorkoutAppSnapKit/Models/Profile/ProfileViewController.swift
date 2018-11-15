@@ -2,10 +2,8 @@ import UIKit
 import SnapKit
 import RxSwift
 
-class ProfileViewController: UIViewController {
+class ProfileViewController: ViewController {
     var presenter: ProfilePresenterInterface!
-
-    let disposeBag = DisposeBag()
 
     var viewModel: ProfileViewModel?
 
@@ -34,13 +32,9 @@ class ProfileViewController: UIViewController {
         return tableView
     }()
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
+    override func setupViewController() {
+        super.setupViewController()
 
-        setup()
-    }
-
-    func setup() {
         view.backgroundColor = .white
 
         navigationItem.title = "Profile"
@@ -74,13 +68,17 @@ class ProfileViewController: UIViewController {
         tableView.reloadData()
     }
 
-    func addSubviews() {
+    override func addSubviews() {
+        super.addSubviews()
+
         view.addSubview(profileImageView)
         view.addSubview(usernameLabel)
         view.addSubview(tableView)
     }
 
-    func layout() {
+    override func layout() {
+        super.layout()
+
         profileImageView.snp.makeConstraints { (make) -> Void in
             make.top.equalTo(view.safeAreaLayoutGuide).offset(40)
             make.centerX.equalTo(view)

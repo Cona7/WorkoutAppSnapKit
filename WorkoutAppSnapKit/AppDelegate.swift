@@ -12,16 +12,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         Fabric.with([Crashlytics.self])
 
-        let viewController = ProfileWireframe.setupModule()
-        let navigationController = UINavigationController(rootViewController: viewController)
+        ApplicationManager.shared = ApplicationManager(window: window!)
+        ApplicationManager.shared?.setRootViewController()
 
-        window?.rootViewController = navigationController
         window?.makeKeyAndVisible()
-
-        UINavigationBar.appearance().barTintColor = .customBlue
-        UINavigationBar.appearance().tintColor = .white
-        UINavigationBar.appearance().isTranslucent = false
-        UINavigationBar.appearance().titleTextAttributes = [.font: UIFont.setHelveticaNeue(textFont: 17), .foregroundColor: UIColor.white]
 
         return true
     }

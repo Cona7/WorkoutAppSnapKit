@@ -1,7 +1,7 @@
 import SnapKit
 import UIKit
 
-class EditProfileViewController: UIViewController {
+class EditProfileViewController: ViewController {
     var presenter: EditProfilePresenterInterface!
 
     var imageView: UIImageView {
@@ -53,13 +53,9 @@ class EditProfileViewController: UIViewController {
 
     var imageViewTopConstraintChanged = false
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
+    override func setupViewController() {
+        super.setupViewController()
 
-        setup()
-    }
-
-    func setup() {
         view.backgroundColor = .white
 
         navigationItem.title = "EditProfile"
@@ -87,7 +83,9 @@ class EditProfileViewController: UIViewController {
         layout()
     }
 
-    func addSubviews() {
+    override func addSubviews() {
+        super.addSubviews()
+
         view.addSubview(centarProfileImageView)
         view.addSubview(leftProfileImageView)
         view.addSubview(rightProfileImageView)
@@ -102,7 +100,9 @@ class EditProfileViewController: UIViewController {
         view.addSubview(saveButton)
     }
 
-    func layout() { // swiftlint:disable:this function_body_length
+    override func layout() { // swiftlint:disable:this function_body_length
+        super.layout()
+
         centarProfileImageView.snp.makeConstraints { (make) -> Void in
             make.top.equalTo(view.safeAreaLayoutGuide).offset(49)
             make.centerX.equalTo(view)
