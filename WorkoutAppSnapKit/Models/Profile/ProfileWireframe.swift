@@ -17,9 +17,7 @@ extension ProfileWireframe: ProfileWireframeInterface {
     func navigate(to option: ProfileNavigationOption) {
         switch option {
         case .editProfile:
-            if let navigator = navigationController {
-                navigator.pushViewController(EditProfileWireframe.setupModule(), animated: true)
-            }
+            navigationController?.pushViewController(EditProfileWireframe.setupModule(), animated: true)
         }
     }
 }

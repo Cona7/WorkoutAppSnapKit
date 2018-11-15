@@ -137,7 +137,6 @@
 			isa = PBXGroup;
 			children = (
 				1D98818F218CC2EE003A1400 /* WorkoutAppSnapKit */,
-				1D98818E218CC2EE003A1400 /* Products */,
 				1D9881A3218CC5A2003A1400 /* Frameworks */,
 			);
 			sourceTree = "<group>";
@@ -153,6 +152,7 @@
 		1D98818F218CC2EE003A1400 /* WorkoutAppSnapKit */ = {
 			isa = PBXGroup;
 			children = (
+				1D9F8991219DD7690045E2B4 /* UI */,
 				1D7863BD2199B930009EB8B9 /* Helpers */,
 				1D7863AF2199B606009EB8B9 /* Models */,
 				1D9881AB218CE297003A1400 /* Extensions */,
@@ -160,7 +160,6 @@
 				1D988197218CC2EF003A1400 /* Assets.xcassets */,
 				1D988199218CC2EF003A1400 /* LaunchScreen.storyboard */,
 				1D98819C218CC2EF003A1400 /* Info.plist */,
-				1D9881B4218DCDD2003A1400 /* TypeViewCell.swift */,
 			);
 			path = WorkoutAppSnapKit;
 			sourceTree = "<group>";
@@ -168,6 +167,7 @@
 		1D9881A3218CC5A2003A1400 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				1D98818E218CC2EE003A1400 /* Products */,
 				1DE057A1219B262400D8F89D /* SwiftViewModels.framework */,
 				1D77595B219B0EA300E32B33 /* RxSwift.framework */,
 				1D775959219B0E9B00E32B33 /* RxCocoa.framework */,
@@ -186,6 +186,22 @@
 				1DEC08A5219212F800C37047 /* UIFontExtension.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		1D9F8991219DD7690045E2B4 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				1D9F8992219DD7760045E2B4 /* Cells */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+		1D9F8992219DD7760045E2B4 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				1D9881B4218DCDD2003A1400 /* TypeViewCell.swift */,
+			);
+			path = Cells;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

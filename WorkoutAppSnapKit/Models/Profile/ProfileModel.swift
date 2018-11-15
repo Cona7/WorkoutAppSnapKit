@@ -4,10 +4,15 @@ struct ProfileCellModel {
 }
 
 struct ProfileModel {
+    var arrayTotal: [ProfileCellModel] = []
+    var arrayMuscles: [ProfileCellModel] = []
+
     var viewModel: ProfileViewModel {
-        return ProfileViewModel(
+        return ProfileViewModel (
             username: "Username",
-            userImage: #imageLiteral(resourceName: "oval2")
+            userImage: #imageLiteral(resourceName: "oval2"),
+            arrayTotal: arrayTotal,
+            arrayMuscles: arrayMuscles
         )
     }
 }

@@ -7,6 +7,8 @@ class ProfileViewController: UIViewController {
 
     let disposeBag = DisposeBag()
 
+    var viewModel: ProfileViewModel?
+
     lazy var profileImageView: UIImageView = {
         let imageView = UIImageView()
         imageView.contentMode = .scaleAspectFit
@@ -63,9 +65,13 @@ class ProfileViewController: UIViewController {
     }
 
     func present(viewModel: ProfileViewModel) {
+        self.viewModel = viewModel
+
         usernameLabel.text = viewModel.username
         usernameLabel.letterSpace = 2.2
         profileImageView = UIImageView(image: viewModel.userImage)
+
+        tableView.reloadData()
     }
 
     func addSubviews() {
@@ -107,15 +113,15 @@ extension ProfileViewController: UITableViewDelegate, UITableViewDataSource {
     }
 
     func numberOfSections(in tableView: UITableView) -> Int {
-        return 2
+        return viewModel != nil ? 2 : 0
     }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         switch section {
         case 0:
-            return ProfileInteractor.arrayTotal.count
+            return viewModel?.arrayTotal.count ?? 0
         case 1:
-            return ProfileInteractor.arrayMuscles.count
+            return viewModel?.arrayMuscles.count ?? 0
         default:
             fatalError("The section number is not valid")
         }
@@ -128,13 +134,17 @@ extension ProfileViewController: UITableViewDelegate, UITableViewDataSource {
             fatalError("The dequeued cell is not an instance of TypeViewCell.")
         }
 
+        guard let viewModel = viewModel else {
+            fatalError("ViewModel in not valid")
+        }
+
         let workoutCell: ProfileCellModel
 
         switch indexPath.section {
         case 0:
-            workoutCell = ProfileInteractor.arrayTotal[indexPath.row]
+            workoutCell = viewModel.arrayTotal[indexPath.row]
         case 1:
-            workoutCell = ProfileInteractor.arrayMuscles[indexPath.row]
+            workoutCell = viewModel.arrayMuscles[indexPath.row]
         default:
             fatalError("The section number is not valid")
         }

@@ -1,5 +1,6 @@
 import UIKit
 import RxCocoa
+import RxSwift
 
 enum ProfileNavigationOption {
     case editProfile
@@ -16,4 +17,6 @@ protocol ProfilePresenterInterface {
 }
 
 protocol ProfileInteractorInterface {
+    func fetchArrayTotal() -> Observable<[ProfileCellModel]>
+    func fetchArrayMuscles() -> Observable<[ProfileCellModel]>
 }
