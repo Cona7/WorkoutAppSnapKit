@@ -1,7 +1,7 @@
 import Foundation
 import RxSwift
 
-final class ProfileInteractor: ProfileInteractorInterface {
+final class ProfileInteractor {
     let arrayTotal = [
         ProfileCellModel(name: "Total Workouts"),
         ProfileCellModel(name: "Total Reps")
@@ -12,7 +12,9 @@ final class ProfileInteractor: ProfileInteractorInterface {
         ProfileCellModel(name: "Biceps"),
         ProfileCellModel(name: "Bench")
     ]
+}
 
+extension ProfileInteractor: ProfileInteractorInterface {
     func fetchArrayTotal() -> Observable<[ProfileCellModel]> {
         return .just(arrayTotal)
     }
