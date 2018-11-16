@@ -1,7 +1,9 @@
-import RxCocoa
 import UIKit
+import RxCocoa
+import RxSwift
 
 enum ProfileNavigationOption {
+    case editProfile
 }
 
 protocol ProfileWireframeInterface {
@@ -10,7 +12,11 @@ protocol ProfileWireframeInterface {
 
 protocol ProfilePresenterInterface {
     var viewModelDriver: Driver<ProfileViewModel> { get }
+
+    func didTapSettingsButton()
 }
 
 protocol ProfileInteractorInterface {
+    func fetchArrayTotal() -> Observable<[ProfileCellModel]>
+    func fetchArrayMuscles() -> Observable<[ProfileCellModel]>
 }

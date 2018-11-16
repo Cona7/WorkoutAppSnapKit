@@ -35,7 +35,6 @@
 		1DE0579D219B102700D8F89D /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D77595B219B0EA300E32B33 /* RxSwift.framework */; };
 		1DE0579E219B102B00D8F89D /* RxCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D775959219B0E9B00E32B33 /* RxCocoa.framework */; };
 		1DE057A0219B13D000D8F89D /* ProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DE0579F219B13D000D8F89D /* ProfileViewModel.swift */; };
-		1DE057A2219B262500D8F89D /* SwiftViewModels.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DE057A1219B262400D8F89D /* SwiftViewModels.framework */; };
 		1DEC08A6219212F800C37047 /* UIFontExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DEC08A5219212F800C37047 /* UIFontExtension.swift */; };
 /* End PBXBuildFile section */
 
@@ -95,8 +94,7 @@
 				1D7863C6219A2E5E009EB8B9 /* EditProfile */,
 				1D7863B02199B61B009EB8B9 /* Profile */,
 			);
-			name = Modules;
-			path = Models;
+			path = Modules;
 			sourceTree = "<group>";
 		};
 		1D7863B02199B61B009EB8B9 /* Profile */ = {
@@ -330,7 +328,6 @@
 				"$(SRCROOT)/Carthage/Build/iOS/SnapKit.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/RxSwift.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/RxCocoa.framework",
-				"$(SRCROOT)/Carthage/Build/iOS/SwiftViewModels.framework",
 			);
 			name = Carthage;
 			outputFileListPaths = (
@@ -339,7 +336,6 @@
 				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/SnapKit.framework",
 				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/RxSwift.framework",
 				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/RxCocoa.framework",
-				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/SwiftViewModels.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;

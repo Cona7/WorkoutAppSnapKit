@@ -47,7 +47,5 @@ class ApplicationManager {
 
     private func setupApperance() {
         window.backgroundColor = .white
-
-        UIApplication.shared.isIdleTimerDisabled = true
     }
 }
