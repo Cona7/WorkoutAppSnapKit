@@ -1,4 +1,4 @@
-platform :ios, '12.1'
+platform :ios, '11.0'
 
 target 'WorkoutAppSnapKit' do
   use_frameworks!
