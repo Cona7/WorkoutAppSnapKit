@@ -30,8 +30,8 @@ platform :ios do
             groups: "InitiativeTracker"
         )
 
-    	version     = get_version_number(xcodeproj: "InitiativeTracker.xcodeproj")
-    	build       = get_build_number(xcodeproj: "InitiativeTracker.xcodeproj")
+    	version     = get_version_number(xcodeproj: "WorkoutAppSnapKit.xcodeproj")
+    	build       = get_build_number(xcodeproj: "WorkoutAppSnapKit.xcodeproj")
     end
 
   lane :devices do

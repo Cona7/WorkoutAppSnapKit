@@ -6,5 +6,5 @@
 ###################### Automatically generated ######################
 # Feel free to remove the following line if you use fastlane (which you should)
 
-app_identifier "Glasovac.WorkoutAppSnapKit" # The bundle identifier of your app
-username "Ivan.rep2@gmail.com" # your Apple ID user
+app_identifier "com.Glasovac.WorkoutAppSnapKit" # The bundle identifier of your app
+username "ivan.rep2@gmail.com" # your Apple ID user
